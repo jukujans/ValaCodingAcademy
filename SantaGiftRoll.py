@@ -57,15 +57,15 @@ with Capturing() as output3:
 with Capturing() as output4:
     ValaMath(Row2Nr2, LimitRow2, Row2Nr2)
 
-## Do the magic for the ouput file structure with function data and parameters
-FirstRow1 = print(LimitRow1,":", (output1), sep='', end=' ', file=s)
-print(file=s)
-FirstRow2 = print(LimitRow1,":", (output2), sep='', end=' ', file=s)
-print(file=s)
-SecondRow1 = print(LimitRow2,":", (output3), sep='', end=' ', file=s)
-print(file=s)
-SecondRow2 = print(LimitRow2,":", (output4), sep='', end=' ', file=s)
-print(file=s)
+## Do the magic for the ouput file and screen print with structure of function data and parameters
+FirstRowMerge = ((str(output1).strip("[']")) + (str(output2).strip("[']")))
+SecondRowMerge = ((str(output3).strip("[']")) + (str(output4).strip("[']")))
+FirstRowNumbers = list(map(int, FirstRowMerge.split()))
+SecondRowNumbers = list(map(int, SecondRowMerge.split()))
+print(LimitRow1,":", sorted(FirstRowNumbers))
+print(LimitRow2,":", sorted(SecondRowNumbers))
+print(LimitRow1,":", sorted(FirstRowNumbers), file=s)
+print(LimitRow2,":", sorted(SecondRowNumbers), file=s)
 
-## Close ouptut file to finalize
+## Close ouptut file
 s.close()
