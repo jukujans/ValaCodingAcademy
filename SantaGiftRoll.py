@@ -52,7 +52,7 @@ with Capturing() as output2:
     ValaMath(Row1Nr2, LimitRow1, Row1Nr2)
 
 with Capturing() as output3:
-    ValaMath(Row2NR1, LimitRow2, Row1Nr1)
+    ValaMath(Row2NR1, LimitRow2, Row2NR1)
 
 with Capturing() as output4:
     ValaMath(Row2Nr2, LimitRow2, Row2Nr2)
